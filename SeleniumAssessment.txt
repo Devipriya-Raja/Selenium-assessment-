@@ -10,7 +10,7 @@ public class Assignment {
 
 	@Test 
 	public void jiraAssessment (){
-		
+		WebDriverManager.chromedriver().setup();
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("https://api-training.atlassian.net/");
