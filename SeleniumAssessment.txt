@@ -1,0 +1,28 @@
+package Jira;
+
+import org.openqa.selenium.chrome.*;
+import org.testng.annotations.Test;
+import org.openqa.selenium.*;
+
+
+
+public class Assignment {
+
+	@Test 
+	public void jiraAssessment (){
+		
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://api-training.atlassian.net/");
+		driver.findElement(By.id("username")).sendKeys("hari.radhakrishnan@testleaf.com");
+		driver.findElement(By.xpath("//span[text()='Continue']")).click();
+		driver.findElement(By.id("password")).sendKeys("India@123");		
+		driver.findElement(By.xpath("//span[text()='Log in']")).click();
+		driver.findElement(By.xpath("//p[@data-testid='deep-dive-card-content--project-name-heading']")).click();
+		driver.findElement(By.xpath("//span[text()='Create']")).click();
+		driver.findElement(By.id("summary-field")).sendKeys("Create a story");
+		driver.findElement(By.xpath("(//span[text()='Create'])[2]")).click();		
+		driver.findElement(By.xpath("//span[text()='View issue']")).click();
+		driver.quit();
+		}
+}
